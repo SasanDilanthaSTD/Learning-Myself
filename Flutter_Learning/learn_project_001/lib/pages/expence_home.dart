@@ -12,13 +12,13 @@ class ExpenceHomeScreen extends StatefulWidget {
 class _ExpenceHomeScreenState extends State<ExpenceHomeScreen> {
   final List<ExpenceModel> _expenceList = [
     ExpenceModel(
-      title: "bag",
+      title: "Bag",
       amount: 250.90,
       date: DateTime.now(),
       category: Category.leasure,
     ),
     ExpenceModel(
-      title: "breacfirst",
+      title: "Breacfirst",
       amount: 50,
       date: DateTime.now(),
       category: Category.food,
