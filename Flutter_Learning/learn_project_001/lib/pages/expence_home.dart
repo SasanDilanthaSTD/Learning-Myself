@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_project_001/models/expence.dart';
+import 'package:learn_project_001/widgets/expence_item.dart';
 
 class ExpenceHomeScreen extends StatefulWidget {
   const ExpenceHomeScreen({super.key});
@@ -9,7 +10,7 @@ class ExpenceHomeScreen extends StatefulWidget {
 }
 
 class _ExpenceHomeScreenState extends State<ExpenceHomeScreen> {
-  List<ExpenceModel> _expence_list = [
+  final List<ExpenceModel> _expenceList = [
     ExpenceModel(
       title: "bag",
       amount: 250.90,
@@ -49,12 +50,7 @@ class _ExpenceHomeScreenState extends State<ExpenceHomeScreen> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: _expence_list.length,
-        itemBuilder: (context, index) {
-          return Text(_expence_list[index].title);
-        },
-      ),
+      body: ExpenceListItems(list: _expenceList),
     );
   }
 }
