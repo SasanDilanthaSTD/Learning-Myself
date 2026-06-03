@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_project_001/models/expence.dart';
+import 'package:learn_project_001/widgets/add_new_expence.dart';
 import 'package:learn_project_001/widgets/expence_item.dart';
 
 class ExpenceHomeScreen extends StatefulWidget {
@@ -25,6 +26,15 @@ class _ExpenceHomeScreenState extends State<ExpenceHomeScreen> {
     ),
   ];
 
+  void _openAddExpenceOverlay() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return AddNewExpence();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +52,7 @@ class _ExpenceHomeScreenState extends State<ExpenceHomeScreen> {
               Container(
                 color: Colors.amberAccent,
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: _openAddExpenceOverlay,
                   icon: const Icon(Icons.add, color: Colors.white),
                 ),
               ),
