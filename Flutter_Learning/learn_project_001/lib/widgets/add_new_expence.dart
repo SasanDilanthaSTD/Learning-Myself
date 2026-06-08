@@ -25,8 +25,8 @@ class _AddNewExpenceState extends State<AddNewExpence> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber.shade50,
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
           TextField(
@@ -80,6 +80,40 @@ class _AddNewExpenceState extends State<AddNewExpence> {
                     _selectedCategory = value!;
                   });
                 },
+              ),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    // close model button
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(
+                          Color.fromARGB(255, 255, 48, 48),
+                        ),
+                      ),
+                      child: Text(
+                        "Close",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    // save data and close model button
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: const ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(
+                          Color.fromARGB(255, 31, 230, 1),
+                        ),
+                      ),
+                      child: Text(
+                        "Save",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
